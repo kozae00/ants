@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: ants
+  profiles:
+    active: dev
+    include: secret
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.kozae.ants: DEBUG
+    org.springframework.web: DEBUG
