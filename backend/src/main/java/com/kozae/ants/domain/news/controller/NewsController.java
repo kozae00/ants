@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
  * 뉴스 Controller
  */
 @RestController
-@RequestMapping("/api/news")
+@RequestMapping("/api/v1/news")
 public class NewsController {
 
     private final NewsService newsService;

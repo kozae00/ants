@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
  * 피드 Controller (뉴스 + 게시글 통합)
  */
 @RestController
-@RequestMapping("/api/feed")
+@RequestMapping("/api/v1/feed")
 public class FeedController {
 
     private final FeedService feedService;
