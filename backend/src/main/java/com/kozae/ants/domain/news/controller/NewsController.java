@@ -4,6 +4,7 @@ import com.kozae.ants.domain.news.dto.NewsCreateRequest;
 import com.kozae.ants.domain.news.dto.NewsResponse;
 import com.kozae.ants.domain.news.service.NewsService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -15,14 +16,11 @@ import org.springframework.web.bind.annotation.*;
  * 뉴스 Controller
  */
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/news")
 public class NewsController {
 
     private final NewsService newsService;
-
-    public NewsController(NewsService newsService) {
-        this.newsService = newsService;
-    }
 
     /**
      * 뉴스 생성

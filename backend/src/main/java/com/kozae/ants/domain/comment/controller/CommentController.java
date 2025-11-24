@@ -5,6 +5,7 @@ import com.kozae.ants.domain.comment.dto.CommentResponse;
 import com.kozae.ants.domain.comment.dto.CommentUpdateRequest;
 import com.kozae.ants.domain.comment.service.CommentService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -16,14 +17,11 @@ import org.springframework.web.bind.annotation.*;
  * 댓글 Controller
  */
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/comments")
 public class CommentController {
 
     private final CommentService commentService;
-
-    public CommentController(CommentService commentService) {
-        this.commentService = commentService;
-    }
 
     /**
      * 댓글 생성

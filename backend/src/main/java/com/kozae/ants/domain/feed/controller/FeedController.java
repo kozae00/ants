@@ -2,6 +2,7 @@ package com.kozae.ants.domain.feed.controller;
 
 import com.kozae.ants.domain.feed.dto.FeedItemResponse;
 import com.kozae.ants.domain.feed.service.FeedService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -12,14 +13,11 @@ import org.springframework.web.bind.annotation.*;
  * 피드 Controller (뉴스 + 게시글 통합)
  */
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/feed")
 public class FeedController {
 
     private final FeedService feedService;
-
-    public FeedController(FeedService feedService) {
-        this.feedService = feedService;
-    }
 
     /**
      * 종목별 피드 조회 (뉴스 + 게시글 통합, 최신순)

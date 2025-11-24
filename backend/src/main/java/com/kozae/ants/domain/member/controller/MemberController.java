@@ -7,6 +7,7 @@ import com.kozae.ants.domain.member.dto.MemberSignupRequest;
 import com.kozae.ants.domain.member.dto.TokenResponse;
 import com.kozae.ants.domain.member.service.MemberService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
@@ -15,14 +16,11 @@ import org.springframework.web.bind.annotation.*;
  * 회원 Controller
  */
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/members")
 public class MemberController {
 
     private final MemberService memberService;
-
-    public MemberController(MemberService memberService) {
-        this.memberService = memberService;
-    }
 
     /**
      * 회원가입

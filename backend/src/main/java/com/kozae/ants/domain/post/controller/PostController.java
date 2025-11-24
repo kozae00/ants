@@ -5,6 +5,7 @@ import com.kozae.ants.domain.post.dto.PostResponse;
 import com.kozae.ants.domain.post.dto.PostUpdateRequest;
 import com.kozae.ants.domain.post.service.PostService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -16,14 +17,12 @@ import org.springframework.web.bind.annotation.*;
  * 게시글 Controller
  */
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/posts")
 public class PostController {
 
     private final PostService postService;
 
-    public PostController(PostService postService) {
-        this.postService = postService;
-    }
 
     /**
      * 게시글 생성

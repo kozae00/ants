@@ -5,6 +5,7 @@ import com.kozae.ants.domain.stock.dto.StockResponse;
 import com.kozae.ants.domain.stock.entity.Stock;
 import com.kozae.ants.domain.stock.repository.StockRepository;
 import com.kozae.ants.global.exception.BusinessException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,14 +16,11 @@ import java.util.stream.Collectors;
  * 종목 Service
  */
 @Service
+@RequiredArgsConstructor
 @Transactional
 public class StockService {
 
     private final StockRepository stockRepository;
-
-    public StockService(StockRepository stockRepository) {
-        this.stockRepository = stockRepository;
-    }
 
     /**
      * 종목 생성

@@ -7,6 +7,7 @@ import com.kozae.ants.domain.post.dto.PostResponse;
 import com.kozae.ants.domain.post.service.PostService;
 import com.kozae.ants.domain.stock.repository.StockRepository;
 import com.kozae.ants.global.exception.BusinessException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
  * 피드 Service (뉴스 + 게시글 통합)
  */
 @Service
+@RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class FeedService {
 
@@ -29,11 +31,6 @@ public class FeedService {
     private final PostService postService;
     private final StockRepository stockRepository;
 
-    public FeedService(NewsService newsService, PostService postService, StockRepository stockRepository) {
-        this.newsService = newsService;
-        this.postService = postService;
-        this.stockRepository = stockRepository;
-    }
 
     /**
      * 종목별 피드 조회 (뉴스 + 게시글 통합, 최신순)

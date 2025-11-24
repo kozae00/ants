@@ -10,6 +10,7 @@ import com.kozae.ants.domain.stock.entity.Stock;
 import com.kozae.ants.domain.stock.repository.StockRepository;
 import com.kozae.ants.global.exception.BusinessException;
 import com.kozae.ants.global.util.MetadataParser;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ import java.util.Map;
  * 뉴스 Service
  */
 @Service
+@RequiredArgsConstructor
 @Transactional
 public class NewsService {
 
@@ -29,13 +31,6 @@ public class NewsService {
     private final MemberRepository memberRepository;
     private final MetadataParser metadataParser;
 
-    public NewsService(NewsRepository newsRepository, StockRepository stockRepository,
-                       MemberRepository memberRepository, MetadataParser metadataParser) {
-        this.newsRepository = newsRepository;
-        this.stockRepository = stockRepository;
-        this.memberRepository = memberRepository;
-        this.metadataParser = metadataParser;
-    }
 
     /**
      * 뉴스 생성 (URL 메타데이터 파싱 포함)

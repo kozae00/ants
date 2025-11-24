@@ -10,6 +10,7 @@ import com.kozae.ants.domain.member.repository.MemberRepository;
 import com.kozae.ants.domain.post.entity.Post;
 import com.kozae.ants.domain.post.repository.PostRepository;
 import com.kozae.ants.global.exception.BusinessException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
  * 댓글 Service
  */
 @Service
+@RequiredArgsConstructor
 @Transactional
 public class CommentService {
 
@@ -26,12 +28,6 @@ public class CommentService {
     private final PostRepository postRepository;
     private final MemberRepository memberRepository;
 
-    public CommentService(CommentRepository commentRepository, PostRepository postRepository,
-                          MemberRepository memberRepository) {
-        this.commentRepository = commentRepository;
-        this.postRepository = postRepository;
-        this.memberRepository = memberRepository;
-    }
 
     /**
      * 댓글 생성

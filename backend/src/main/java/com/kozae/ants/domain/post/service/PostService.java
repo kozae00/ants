@@ -10,6 +10,7 @@ import com.kozae.ants.domain.post.repository.PostRepository;
 import com.kozae.ants.domain.stock.entity.Stock;
 import com.kozae.ants.domain.stock.repository.StockRepository;
 import com.kozae.ants.global.exception.BusinessException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
  * 게시글 Service
  */
 @Service
+@RequiredArgsConstructor
 @Transactional
 public class PostService {
 
@@ -26,12 +28,6 @@ public class PostService {
     private final StockRepository stockRepository;
     private final MemberRepository memberRepository;
 
-    public PostService(PostRepository postRepository, StockRepository stockRepository,
-                       MemberRepository memberRepository) {
-        this.postRepository = postRepository;
-        this.stockRepository = stockRepository;
-        this.memberRepository = memberRepository;
-    }
 
     /**
      * 게시글 생성

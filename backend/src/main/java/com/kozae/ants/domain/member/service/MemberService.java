@@ -10,6 +10,8 @@ import com.kozae.ants.domain.member.repository.MemberRepository;
 import com.kozae.ants.global.exception.BusinessException;
 import com.kozae.ants.global.exception.UnauthorizedException;
 import com.kozae.ants.global.security.JwtUtil;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,18 +20,13 @@ import org.springframework.transaction.annotation.Transactional;
  * 회원 Service
  */
 @Service
+@RequiredArgsConstructor
 @Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
-
-    public MemberService(MemberRepository memberRepository, PasswordEncoder passwordEncoder, JwtUtil jwtUtil) {
-        this.memberRepository = memberRepository;
-        this.passwordEncoder = passwordEncoder;
-        this.jwtUtil = jwtUtil;
-    }
 
     /**
      * 회원가입

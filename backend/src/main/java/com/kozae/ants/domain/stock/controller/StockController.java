@@ -4,6 +4,7 @@ import com.kozae.ants.domain.stock.dto.StockCreateRequest;
 import com.kozae.ants.domain.stock.dto.StockResponse;
 import com.kozae.ants.domain.stock.service.StockService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,14 +14,12 @@ import java.util.List;
  * 종목 Controller
  */
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/stocks")
 public class StockController {
 
     private final StockService stockService;
 
-    public StockController(StockService stockService) {
-        this.stockService = stockService;
-    }
 
     /**
      * 종목 생성
