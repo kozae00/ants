@@ -13,7 +13,7 @@ import java.util.List;
  * 종목 Controller
  */
 @RestController
-@RequestMapping("/api/stocks")
+@RequestMapping("/api/v1/stocks")
 public class StockController {
 
     private final StockService stockService;

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
  * 게시글 Controller
  */
 @RestController
-@RequestMapping("/api/posts")
+@RequestMapping("/api/v1/posts")
 public class PostController {
 
     private final PostService postService;
