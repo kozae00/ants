@@ -1,6 +1,6 @@
 package com.kozae.ants.domain.member.controller;
 
-import com.ants.domain.member.dto.*;
+import com.kozae.ants.domain.member.dto.*;
 import com.kozae.ants.domain.member.dto.MemberLoginRequest;
 import com.kozae.ants.domain.member.dto.MemberResponse;
 import com.kozae.ants.domain.member.dto.MemberSignupRequest;
