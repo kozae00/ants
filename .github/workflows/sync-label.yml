@@ -16,9 +16,9 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Sync labels
+      - name: Sync GitHub Labels
         uses: crazy-max/ghaction-github-labeler@v4
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
